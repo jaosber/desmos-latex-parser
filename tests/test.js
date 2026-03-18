@@ -5,8 +5,9 @@ console.log("\n===== LEXER TEST =====");
 // x^2+y^2=z^2+\frac{1}{2+3}\cos\left(x\right)
 // \\frac{a+b}{\\cos\\left(x\\right)}+\\sqrt{x^2+y^2}=9.567
 // x^2+y^2=z^2+\\frac{1}{2.7182+3}\\cos\\left(x-\\pi\\right)
+//\\pi\\cdot\\cos\\left(x\\right)+a^{b}
 
-let sampleLatex = "\\pi\\cdot\\cos\\left(x\\right)+a^{b}";
+let sampleLatex = "\\pi^{\\operatorname{mod}\\left(x,2\\right)}+a^{b^{c}}+\\sqrt{\\frac{1}{2.7182+y}}\\left(-1\\right)\\cdot\cos\\left(x+y\\right)";
 
 let lexer = require("../parser/latex-lexer.min.js");
 var state = lexer.lex(sampleLatex);
@@ -77,7 +78,7 @@ let expressionParser = require("../parser/expression-parser.min.js");
 let latexTree = latexParser.parse(sampleLatex);
 let surfaceTree = expressionParser.parse(latexTree);
 
-sampleLatex = "a^{b^c}";
+//sampleLatex = "a^{b^c}";
 
 // Helper clean surface nodes
 function cleanSurface(node) {
