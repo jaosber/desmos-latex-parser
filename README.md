@@ -29,7 +29,7 @@ After phase 4, the parsenodes are compiled to JavaScript via `getEvalStrings()` 
 
 - [x] Phase 1 — Latex Lexer (extracted, functional)
 - [x] Phase 2 — Latex Parser (extracted, functional)
-- [ ] Phase 3 — Expression Parser
+- [x] Phase 3 — Expression Parser
 - [ ] Phase 4 — Lower
 - [ ] Evaluation (`getEvalStrings` + `BuiltIn`)
 
