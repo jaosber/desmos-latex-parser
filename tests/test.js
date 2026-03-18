@@ -4,8 +4,9 @@ console.log("\n===== LEXER TEST =====");
 // \frac{a+b}{\cos\left(c\right)}+\sqrt{x^2+y^2}-e^{\left(-x^2\right)}\left(x\cdot y\cdot z\right)=9.567
 // x^2+y^2=z^2+\frac{1}{2+3}\cos\left(x\right)
 // \\frac{a+b}{\\cos\\left(x\\right)}+\\sqrt{x^2+y^2}=9.567
+// x^2+y^2=z^2+\\frac{1}{2.7182+3}\\cos\\left(x-\\pi\\right)
 
-let sampleLatex = "x^2+y^2=z^2+\\frac{1}{2.7182+3}\\cos\\left(x-\\pi\\right)";
+let sampleLatex = "\\pi\\cdot\\cos\\left(x\\right)+a^{b}";
 
 let lexer = require("../parser/latex-lexer.min.js");
 var state = lexer.lex(sampleLatex);
@@ -70,3 +71,45 @@ tests.forEach(function(input){
   }
 });
 
+console.log("\n===== EXPRESSION PARSER TEST =====");
+
+let expressionParser = require("../parser/expression-parser.min.js");
+let latexTree = latexParser.parse(sampleLatex);
+let surfaceTree = expressionParser.parse(latexTree);
+
+sampleLatex = "a^{b^c}";
+
+// Helper clean surface nodes
+function cleanSurface(node) {
+  
+  if (!node || typeof node !== "object") return node;
+  if (Array.isArray(node)) return node.map(cleanSurface);
+
+  var out = { type: node.type };
+
+  if (node.val !== undefined) out.val = node.val;
+  if (node.symbol !== undefined) out.symbol = node.symbol;
+  if (node.nprimes !== undefined) out.nprimes = node.nprimes;
+  if (node.whole !== undefined) out.whole = node.whole;
+  if (node.num !== undefined) out.num = node.num;
+  if (node.den !== undefined) out.den = node.den;
+  if (node.args) out.args = node.args.map(cleanSurface);
+  if (node.first) out.first = cleanSurface(node.first);
+  if (node.chain) out.chain = node.chain.map(cleanSurface);
+
+  return out;
+}
+
+function testExpr(latex, latexParser, expressionParser) {
+  console.log("\nInput:", latex, "\n");
+
+  try {
+    var latexTree = latexParser.parse(latex);
+    var surfaceTree = expressionParser.parse(latexTree);
+    console.log(JSON.stringify(cleanSurface(surfaceTree), null, 2));
+  } catch(e) {
+    console.log("Error:", e);
+  }
+}
+
+testExpr(sampleLatex, latexParser, expressionParser);
