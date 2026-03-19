@@ -42,22 +42,41 @@ node ./tests/test.js
 Ouput
 
 ```javascript
+
 ===== LEXER TEST =====
 
-latex string: x^2+y^2=z^2+\frac{1}{2.7182+3}\cos\left(x-\pi\right)
+latex string: \pi^{\operatorname{mod}\left(x,2\right)}+a^{b^{c}}+\sqrt{\frac{1}{2.7182+y}}\left(-1\right)\cdotcos\left(x+y\right)
 
+Cmd             "\\pi"
+^               "^"
+{               "{"
+OperatorName    "\\operatorname"
+{               "{"
+Letter          "m"
+Letter          "o"
+Letter          "d"
+}               "}"
+Left            "\\left"
+Symbol          "("
 Letter          "x"
-^               "^"
+Symbol          ","
 Digit           "2"
+Right           "\\right"
+Symbol          ")"
+}               "}"
 Symbol          "+"
-Letter          "y"
+Letter          "a"
 ^               "^"
-Digit           "2"
-Symbol          "="
-Letter          "z"
+{               "{"
+Letter          "b"
 ^               "^"
-Digit           "2"
+{               "{"
+Letter          "c"
+}               "}"
+}               "}"
 Symbol          "+"
+Sqrt            "\\sqrt"
+{               "{"
 Frac            "\\frac"
 {               "{"
 Digit           "1"
@@ -70,26 +89,33 @@ Digit           "1"
 Digit           "8"
 Digit           "2"
 Symbol          "+"
-Digit           "3"
+Letter          "y"
 }               "}"
-Cmd             "\\cos"
+}               "}"
+Left            "\\left"
+Symbol          "("
+Symbol          "-"
+Digit           "1"
+Right           "\\right"
+Symbol          ")"
+Cmd             "\\cdotcos"
 Left            "\\left"
 Symbol          "("
 Letter          "x"
-Symbol          "-"
-Cmd             "\\pi"
+Symbol          "+"
+Letter          "y"
 Right           "\\right"
 Symbol          ")"
 
 ===== LATEX PARSER TEST =====
 
-Input: x^2+y^2=z^2+\frac{1}{2.7182+3}\cos\left(x-\pi\right)
+Input: \pi^{\operatorname{mod}\left(x,2\right)}+a^{b^{c}}+\sqrt{\frac{1}{2.7182+y}}\left(-1\right)\cdotcos\left(x+y\right)
 Tree: {
   "type": "Group",
   "args": [
     {
-      "type": "Letter",
-      "val": "x"
+      "type": "Cmd",
+      "val": "\\pi"
     },
     {
       "type": "SupSub",
@@ -98,8 +124,52 @@ Tree: {
         "type": "Group",
         "args": [
           {
-            "type": "Digit",
-            "val": "2"
+            "type": "OperatorName",
+            "arg": {
+              "type": "Group",
+              "args": [
+                {
+                  "type": "Letter",
+                  "val": "m"
+                },
+                {
+                  "type": "Letter",
+                  "val": "o"
+                },
+                {
+                  "type": "Letter",
+                  "val": "d"
+                }
+              ]
+            }
+          },
+          {
+            "type": "LeftRight",
+            "arg": {
+              "type": "Group",
+              "args": [
+                {
+                  "type": "Letter",
+                  "val": "x"
+                },
+                {
+                  "type": "Symbol",
+                  "val": ","
+                },
+                {
+                  "type": "Digit",
+                  "val": "2"
+                }
+              ]
+            },
+            "left": {
+              "type": "Symbol",
+              "val": "("
+            },
+            "right": {
+              "type": "Symbol",
+              "val": ")"
+            }
           }
         ]
       }
@@ -110,7 +180,7 @@ Tree: {
     },
     {
       "type": "Letter",
-      "val": "y"
+      "val": "a"
     },
     {
       "type": "SupSub",
@@ -119,29 +189,21 @@ Tree: {
         "type": "Group",
         "args": [
           {
-            "type": "Digit",
-            "val": "2"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Symbol",
-      "val": "="
-    },
-    {
-      "type": "Letter",
-      "val": "z"
-    },
-    {
-      "type": "SupSub",
-      "nprimes": 0,
-      "sup": {
-        "type": "Group",
-        "args": [
+            "type": "Letter",
+            "val": "b"
+          },
           {
-            "type": "Digit",
-            "val": "2"
+            "type": "SupSub",
+            "nprimes": 0,
+            "sup": {
+              "type": "Group",
+              "args": [
+                {
+                  "type": "Letter",
+                  "val": "c"
+                }
+              ]
+            }
           }
         ]
       }
@@ -151,57 +213,89 @@ Tree: {
       "val": "+"
     },
     {
-      "type": "Frac",
-      "num": {
+      "type": "Sqrt",
+      "arg": {
         "type": "Group",
         "args": [
+          {
+            "type": "Frac",
+            "num": {
+              "type": "Group",
+              "args": [
+                {
+                  "type": "Digit",
+                  "val": "1"
+                }
+              ]
+            },
+            "den": {
+              "type": "Group",
+              "args": [
+                {
+                  "type": "Digit",
+                  "val": "2"
+                },
+                {
+                  "type": "Symbol",
+                  "val": "."
+                },
+                {
+                  "type": "Digit",
+                  "val": "7"
+                },
+                {
+                  "type": "Digit",
+                  "val": "1"
+                },
+                {
+                  "type": "Digit",
+                  "val": "8"
+                },
+                {
+                  "type": "Digit",
+                  "val": "2"
+                },
+                {
+                  "type": "Symbol",
+                  "val": "+"
+                },
+                {
+                  "type": "Letter",
+                  "val": "y"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "LeftRight",
+      "arg": {
+        "type": "Group",
+        "args": [
+          {
+            "type": "Symbol",
+            "val": "-"
+          },
           {
             "type": "Digit",
             "val": "1"
           }
         ]
       },
-      "den": {
-        "type": "Group",
-        "args": [
-          {
-            "type": "Digit",
-            "val": "2"
-          },
-          {
-            "type": "Symbol",
-            "val": "."
-          },
-          {
-            "type": "Digit",
-            "val": "7"
-          },
-          {
-            "type": "Digit",
-            "val": "1"
-          },
-          {
-            "type": "Digit",
-            "val": "8"
-          },
-          {
-            "type": "Digit",
-            "val": "2"
-          },
-          {
-            "type": "Symbol",
-            "val": "+"
-          },
-          {
-            "type": "Digit",
-            "val": "3"
-          }
-        ]
+      "left": {
+        "type": "Symbol",
+        "val": "("
+      },
+      "right": {
+        "type": "Symbol",
+        "val": ")"
       }
     },
     {
       "type": "Cmd",
-      "val": "\\cos"
+      "val": "\\cdotcos"
     },
     {
       "type": "LeftRight",
@@ -214,11 +308,11 @@ Tree: {
           },
           {
             "type": "Symbol",
-            "val": "-"
+            "val": "+"
           },
           {
-            "type": "Cmd",
-            "val": "\\pi"
+            "type": "Letter",
+            "val": "y"
           }
         ]
       },
@@ -233,4 +327,146 @@ Tree: {
     }
   ]
 }
+
+===== EXPRESSION PARSER TEST =====
+
+Input: \pi^{\operatorname{mod}\left(x,2\right)}+a^{b^{c}}+\sqrt{\frac{1}{2.7182+y}}\left(-1\right)\cdotcos\left(x+y\right)
+
+{
+  "type": "Add",
+  "args": [
+    {
+      "type": "Add",
+      "args": [
+        {
+          "type": "Superscript",
+          "args": [
+            {
+              "type": "Cmd",
+              "val": "pi"
+            },
+            {
+              "type": "Call",
+              "args": [
+                {
+                  "type": "Cmd",
+                  "val": "mod"
+                },
+                {
+                  "type": "Seq",
+                  "args": [
+                    {
+                      "type": "Letter",
+                      "val": "x"
+                    },
+                    {
+                      "type": "Decimal",
+                      "val": "2"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Superscript",
+          "args": [
+            {
+              "type": "Letter",
+              "val": "a"
+            },
+            {
+              "type": "Superscript",
+              "args": [
+                {
+                  "type": "Letter",
+                  "val": "b"
+                },
+                {
+                  "type": "Letter",
+                  "val": "c"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Juxt",
+      "args": [
+        {
+          "type": "Juxt",
+          "args": [
+            {
+              "type": "Sqrt",
+              "args": [
+                {
+                  "type": "Frac",
+                  "args": [
+                    {
+                      "type": "Decimal",
+                      "val": "1"
+                    },
+                    {
+                      "type": "Add",
+                      "args": [
+                        {
+                          "type": "Decimal",
+                          "val": "2.7182"
+                        },
+                        {
+                          "type": "Letter",
+                          "val": "y"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Paren",
+              "args": [
+                {
+                  "type": "Neg",
+                  "args": [
+                    {
+                      "type": "Decimal",
+                      "val": "1"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Call",
+          "args": [
+            {
+              "type": "Cmd",
+              "val": "cdotcos"
+            },
+            {
+              "type": "Add",
+              "args": [
+                {
+                  "type": "Letter",
+                  "val": "x"
+                },
+                {
+                  "type": "Letter",
+                  "val": "y"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
 ```
