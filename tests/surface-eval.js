@@ -473,7 +473,7 @@ test("sin(pi/2)",               null, "\\sin(\\frac{\\pi}{2})", 1);
 test("tan(0)",                  null, "\\tan(0)", 0);
 test("cos with \\left\\right",  null, "\\cos\\left(0\\right)", 1);
 
-/*
+
 console.log("\n===== LOGARITHMS =====\n");
 test("ln(1)",                   null, "\\ln(1)", 0);
 test("ln(e)",                   null, "\\ln(e)", 1);
@@ -542,5 +542,3 @@ test("Less than false",         null, "5<3", 0);
 test("Greater equal",           null, "5\\ge 5", 1);
 test("Equality",                null, "3=3", 1);
 test("Equality false",          null, "3=4", 0);
-
-*/
