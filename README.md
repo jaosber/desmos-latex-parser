@@ -37,6 +37,7 @@ After phase 4, the parsenodes are compiled to JavaScript via `getEvalStrings()` 
 
 ```bash
 node ./tests/test.js
+node ./tests/surface-eval.js
 ```
 
 Ouput
