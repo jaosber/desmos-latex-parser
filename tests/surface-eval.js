@@ -1,4 +1,4 @@
-// ============================================================
+//
 // Surface Tree Evaluator
 // Walks the surface tree from expression-parser and computes results
 // ============================================================
