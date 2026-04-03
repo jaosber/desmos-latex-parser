@@ -45,6 +45,7 @@ const builtinFunctions = {
   "\\round": Math.round,
   "\\sign": Math.sign,
   "mod": mod,
+  "step": step,
 };
 
 // ===== BUILT-IN CONSTANTS =====
