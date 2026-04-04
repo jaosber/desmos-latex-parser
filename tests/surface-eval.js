@@ -46,6 +46,7 @@ const builtinFunctions = {
   "\\sign": Math.sign,
   "mod": mod,
   "step": step,
+  "fract": fract,
 };
 
 // ===== BUILT-IN CONSTANTS =====
