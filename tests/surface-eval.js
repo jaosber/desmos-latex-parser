@@ -46,9 +46,9 @@ const builtinFunctions = {
   "\\sign": Math.sign,
   "mod": mod,
   "step": step,
+  "smoothstep": smoothstep,
   "fract": fract,
   "lerp": lerp,
-  "smoothstep": smoothstep,
 };
 
 // ===== BUILT-IN CONSTANTS =====
