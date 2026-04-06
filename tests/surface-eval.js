@@ -48,6 +48,7 @@ const builtinFunctions = {
   "step": step,
   "smoothstep": smoothstep,
   "fract": fract,
+  "saturate": saturate,
   "lerp": lerp,
 };
 
