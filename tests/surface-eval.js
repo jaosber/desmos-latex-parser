@@ -3,7 +3,7 @@
 
 function clamp(x,a,b) { if(x < a) return a; if(x > b) return b; return x; }
 function saturate(x) { return clamp(x,0.0,1.0); }
-function step(x,a) { return (x < a) ? 0.0:1.0; }
+function step(x,a) { return (x < a) ? 0.0 : 1.0; }
 function smoothstep(x,a,b) { let y = saturate((x-a)/(b-a)); return y*y*(3.0 - 2.0*y); }
 function mod(x,y) { return x - y*Math.floor(x/y); }
 function fract(x) { return x - Math.floor(x); }
