@@ -49,7 +49,7 @@ const builtinFunctions = {
   "smoothstep": smoothstep,
   "fract": fract,
   "saturate": saturate,
-  "lerp": lerp,
+  "lerp": lerp
 };
 
 // ===== BUILT-IN CONSTANTS =====
