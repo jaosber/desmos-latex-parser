@@ -8,7 +8,6 @@ function smoothstep(x,a,b) { let y = saturate((x-a)/(b-a)); return 3.0*y*y - 2.0
 function mod(x,y) { return x - y*Math.floor(x/y); }
 function fract(x) { return x - Math.floor(x); }
 function lerp(x,a,b) { return a + (b-a)*x; }
-
 function factorial(n) {
   if (n < 0) return NaN;
   if (n === 0 || n === 1) return 1;
