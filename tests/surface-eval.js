@@ -1,6 +1,7 @@
 // Surface Tree Evaluator
 // Walks the surface tree from expression-parser and computes results
 
+// Samples functions
 function clamp(x,a,b) { if(x < a) return a; if(x > b) return b; return x; }
 function saturate(x) { return clamp(x,0.0,1.0); }
 function step(x,a) { return (x < a) ? 0.0:1.0; }
