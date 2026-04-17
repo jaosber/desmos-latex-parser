@@ -18,7 +18,7 @@ function factorial(n) {
   return result;
 }
 
-const latexParser = require("../parser/latex-parser.min.js");
+const latexParser      = require("../parser/latex-parser.min.js");
 const expressionParser = require("../parser/expression-parser.min.js");
 
 // ===== BUILT-IN MATH FUNCTIONS =====
