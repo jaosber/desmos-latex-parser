@@ -27,7 +27,7 @@ const builtinFunctions = {
   "\\sin": Math.sin,
   "\\tan": Math.tan,
   "\\cot": (x) => 1/Math.tan(x),
-  "\\sec": (x) => 1 / Math.cos(x),
+  "\\sec": (x) => 1/Math.cos(x),
   "\\csc": (x) => 1 / Math.sin(x),
   "\\arcsin": Math.asin,
   "\\arccos": Math.acos,
