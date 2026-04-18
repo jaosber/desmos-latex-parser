@@ -55,7 +55,7 @@ const builtinFunctions = {
 // ===== BUILT-IN CONSTANTS =====
 const builtinConstants = {
   "pi": Math.PI,
-  "tau": Math.PI * 2,
+  "tau": 2*Math.PI,
   "e": Math.E,
 };
 
