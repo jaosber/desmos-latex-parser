@@ -9,6 +9,7 @@ function clamp(x,a,b) { if(x < a) return a; if(x > b) return b; return x; }
 function saturate(x) { return clamp(x, 0.0, 1.0); }
 function smoothstep(x,a,b) { let y = saturate((x-a)/(b-a)); return 3.0*y*y - 2.0*y*y*y; }
 function fract(x) { return x - Math.floor(x); }
+function sigmoid(x){ return 1/(1+Math.exp(-x)); }
 function factorial(n) {
   if (n < 0) return NaN;
   if (n === 0 || n === 1) return 1;
