@@ -12,6 +12,7 @@ function fract(x) { return x - Math.floor(x); }
 function sigmoid(x){ return 1/(1+Math.exp(-x)); }
 function eml(x,y) { return Math.exp(x)-Math.log(y); }
 function min(x, y) { return (x < y) ? x : y; }
+function max(x, y) { return (x > y) ? x : y; }
 
 function factorial(n) {
   if (n < 0) return NaN;
