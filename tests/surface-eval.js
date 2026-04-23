@@ -11,6 +11,8 @@ function smoothstep(x,a,b) { let y = saturate((x-a)/(b-a)); return 3.0*y*y - 2.0
 function fract(x) { return x - Math.floor(x); }
 function sigmoid(x){ return 1/(1+Math.exp(-x)); }
 function eml(x,y) { return Math.exp(x)-Math.log(y); }
+function min(x, y) { return (x < y) ? x : y; }
+
 function factorial(n) {
   if (n < 0) return NaN;
   if (n === 0 || n === 1) return 1;
