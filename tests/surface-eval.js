@@ -4,7 +4,7 @@
 // Samples functions
 function mod(x, y) { return x - y*Math.floor(x/y); }
 function step(x, a) { return (x < a) ? 0.0 : 1.0; }
-function lerp(x,a,b) { return a + (b-a)*x; }
+function lerp(x, a, b) { return a + (b-a)*x; }
 function clamp(x, a, b) { if(x < a) return a; if(x > b) return b; return x; }
 function saturate(x) { return clamp(x, 0.0, 1.0); }
 function smoothstep(x, a, b) { let y = saturate((x-a)/(b-a)); return 3.0*y*y - 2.0*y*y*y; }
