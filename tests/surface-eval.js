@@ -11,7 +11,7 @@ function smoothstep(x, a, b) { let y = saturate((x-a)/(b-a)); return 3.0*y*y - 2
 function smootherstep(x, a, b) { let y = saturate((x - a) / (b - a)); return y * y * y * (y * (y * 6.0 - 15.0) + 10.0); }
 function fract(x) { return x - Math.floor(x); }
 function sigmoid(x){ return 1/(1+Math.exp(-x)); }
-function eml(x,y) { return Math.exp(x)-Math.log(y); }
+function eml(x, y) { return Math.exp(x)-Math.log(y); }
 function min(x, y) { return (x < y) ? x : y; }
 function max(x, y) { return (x > y) ? x : y; }
 function pulse(x,a,b) { return step(a,x) - step(b,x); }
