@@ -2,7 +2,7 @@
 // Walks the surface tree from expression-parser and computes results
 
 // Samples functions
-function mod(x,y) { return x - y*Math.floor(x/y); }
+function mod(x, y) { return x - y*Math.floor(x/y); }
 function step(x, a) { return (x < a) ? 0.0 : 1.0; }
 function lerp(x,a,b) { return a + (b-a)*x; }
 function clamp(x,a,b) { if(x < a) return a; if(x > b) return b; return x; }
