@@ -14,7 +14,7 @@ function sigmoid(x){ return 1/(1+Math.exp(-x)); }
 function eml(x, y) { return Math.exp(x)-Math.log(y); }
 function min(x, y) { return (x < y) ? x : y; }
 function max(x, y) { return (x > y) ? x : y; }
-function pulse(x,a,b) { return step(a,x) - step(b,x); }
+function pulse(x, a, b) { return step(a,x) - step(b,x); }
 function trunc(x) { return Math.trunc(x); }
 function atan2(y, x) { return Math.atan2(y, x); }
 function wrap(x, a, b) { const range = b - a; return x - range * Math.floor((x - a) / range); }
