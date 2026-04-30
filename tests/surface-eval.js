@@ -61,6 +61,7 @@ const builtinFunctions = {
   "\\round": Math.round,
   "\\sign": Math.sign,
   "mod": mod,
+  "atan2": atan2,
   "step": step,
   "smoothstep": smoothstep,
   "fract": fract,
