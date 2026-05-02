@@ -62,6 +62,7 @@ const builtinFunctions = {
   "\\sign": Math.sign,
   "mod": mod,
   "max": max,
+  "min": min,
   "atan2": atan2,
   "step": step,
   "smoothstep": smoothstep,
