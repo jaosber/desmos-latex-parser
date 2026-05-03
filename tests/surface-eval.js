@@ -63,6 +63,7 @@ const builtinFunctions = {
   "mod": mod,
   "max": max,
   "min": min,
+  "trunc": trunc,
   "atan2": atan2,
   "step": step,
   "smoothstep": smoothstep,
