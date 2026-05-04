@@ -64,6 +64,7 @@ const builtinFunctions = {
   "max": max,
   "min": min,
   "trunc": trunc,
+  "sigmoid": sigmoid,
   "atan2": atan2,
   "step": step,
   "smoothstep": smoothstep,
