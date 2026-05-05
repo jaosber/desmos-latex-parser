@@ -68,6 +68,7 @@ const builtinFunctions = {
   "atan2": atan2,
   "step": step,
   "wrap": wrap,
+  "pulse": pulse,
   "smoothstep": smoothstep,
   "fract": fract,
   "saturate": saturate,
