@@ -73,6 +73,7 @@ const builtinFunctions = {
   "fract": fract,
   "saturate": saturate,
   "lerp": lerp,
+  "map": map,
 };
 
 // ===== BUILT-IN CONSTANTS =====
