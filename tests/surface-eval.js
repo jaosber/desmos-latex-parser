@@ -70,6 +70,7 @@ const builtinFunctions = {
   "wrap": wrap,
   "pulse": pulse,
   "smoothstep": smoothstep,
+  "smootherstep": smootherstep,
   "fract": fract,
   "saturate": saturate,
   "lerp": lerp,
