@@ -77,7 +77,7 @@ const builtinFunctions = {
   "map": map,
 };
 
-// ===== BUILT-IN CONSTANTS =====
+// BUILT-IN CONSTANTS
 const builtinConstants = {
   "pi": Math.PI,
   "tau": 2*Math.PI,
