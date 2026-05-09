@@ -84,7 +84,7 @@ const builtinConstants = {
   "e": Math.E,
 };
 
-// ===== PARSE CONTEXT STRING =====
+// PARSE CONTEXT STRING
 // Parses "a = 5" or "f(x) = cos(x)" into context entries
 function parseContextEntry(entry) {
   entry = entry.trim();
