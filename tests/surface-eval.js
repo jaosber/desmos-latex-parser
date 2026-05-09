@@ -37,7 +37,7 @@ function factorial(n) {
 const latexParser      = require("../parser/latex-parser.min.js");
 const expressionParser = require("../parser/expression-parser.min.js");
 
-// ===== BUILT-IN MATH FUNCTIONS =====
+// BUILT-IN MATH FUNCTIONS
 const builtinFunctions = {
   "\\cos": Math.cos,
   "\\sin": Math.sin,
