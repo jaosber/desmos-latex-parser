@@ -129,7 +129,7 @@ function parseContextEntry(entry) {
   throw new Error("Cannot parse context entry: " + entry);
 }
 
-// ===== BUILD EVALUATION CONTEXT =====
+// BUILD EVALUATION CONTEXT
 function buildContext(entries) {
   var ctx = {
     vars: Object.assign({}, builtinConstants),
