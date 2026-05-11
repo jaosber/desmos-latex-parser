@@ -174,7 +174,7 @@ function buildContext(entries) {
   return ctx;
 }
 
-// ===== CORE EVALUATOR =====
+// CORE EVALUATOR 
 function evalNode(node, ctx) {
   switch (node.type) {
     // --- Literals ---
