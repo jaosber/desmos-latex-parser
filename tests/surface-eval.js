@@ -366,7 +366,7 @@ function evalArgs(argNode, ctx) {
   return [evalNode(argNode, ctx)];
 }
 
-// ===== INEQUALITY EVALUATION =====
+// INEQUALITY EVALUATION
 function evalInequality(node, ctx) {
   var left = evalNode(node.args[0], ctx);
   var right = evalNode(node.args[1], ctx);
