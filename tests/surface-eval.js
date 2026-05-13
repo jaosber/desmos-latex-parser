@@ -429,7 +429,7 @@ function evaluate(latex, ctxOrEntries) {
   return evalNode(surfaceTree, ctx);
 }
 
-// ===== CONVENIENT WRAPPER =====
+// CONVENIENT WRAPPER
 function calc(contextEntries, latex) {
   if (arguments.length === 1) {
     latex = contextEntries;
