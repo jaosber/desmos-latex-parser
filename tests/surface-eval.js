@@ -413,7 +413,7 @@ function evalRange(node, ctx) {
 }
 
 
-// ===== MAIN EVALUATE FUNCTION =====
+// MAIN EVALUATE FUNCTION
 function evaluate(latex, ctxOrEntries) {
   var ctx;
   if (!ctxOrEntries) {
