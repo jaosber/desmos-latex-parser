@@ -400,7 +400,7 @@ function evalPiecewise(node, ctx) {
   return evalNode(inner, ctx);
 }
 
-// ===== RANGE EVALUATION =====
+// RANGE EVALUATION
 function evalRange(node, ctx) {
   var start = evalNode(node.args[0], ctx);
   var end = evalNode(node.args[1], ctx);
