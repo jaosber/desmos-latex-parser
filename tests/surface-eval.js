@@ -310,7 +310,7 @@ function evalNode(node, ctx) {
   }
 }
 
-// ===== FUNCTION CALL EVALUATION =====
+// FUNCTION CALL EVALUATION
 function evalCall(node, ctx) {
   var caller = node.args[0];
   var argNode = node.args[1];
