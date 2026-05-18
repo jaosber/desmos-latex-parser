@@ -379,7 +379,7 @@ function evalInequality(node, ctx) {
   }
 }
 
-// ===== PIECEWISE EVALUATION =====
+// PIECEWISE EVALUATION
 function evalPiecewise(node, ctx) {
   var inner = node.args[0];
   if (inner.type === "Seq") {
