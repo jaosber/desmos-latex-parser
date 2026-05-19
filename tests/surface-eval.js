@@ -74,7 +74,7 @@ const builtinFunctions = {
   "fract": fract,
   "saturate": saturate,
   "lerp": lerp,
-  "map": map,
+  "map": map
 };
 
 // BUILT-IN CONSTANTS
