@@ -74,14 +74,14 @@ const builtinFunctions = {
   "fract": fract,
   "saturate": saturate,
   "lerp": lerp,
-  "map": map
+  "map": map,
 };
 
 // BUILT-IN CONSTANTS
 const builtinConstants = {
   "pi": Math.PI,
   "tau": 2*Math.PI,
-  "e": Math.E
+  "e": Math.E,
 };
 
 // PARSE CONTEXT STRING
