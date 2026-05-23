@@ -10,7 +10,7 @@ function saturate(x) { return clamp(x, 0.0, 1.0); }
 function smoothstep(x, a, b) { let y = saturate((x-a)/(b-a)); return 3.0*y*y - 2.0*y*y*y; }
 function smootherstep(x, a, b) { let y = saturate((x - a) / (b - a)); return y * y * y * (y * (y * 6.0 - 15.0) + 10.0); }
 function fract(x) { return x - Math.floor(x); }
-function sigmoid(x){ return 1/(1+Math.exp(-x)); }
+function sigmoid(x){ return 1/(1 + Math.exp(-x)); }
 function eml(x, y) { return Math.exp(x) - Math.log(y); }
 function min(x, y) { return (x < y) ? x : y; }
 function max(x, y) { return (x > y) ? x : y; }
