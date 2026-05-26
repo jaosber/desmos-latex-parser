@@ -20,7 +20,7 @@ function atan2(y, x) { return Math.atan2(y,x); }
 function wrap(x, a, b) { const range = b - a; return x - range * Math.floor((x - a)/range); }
 function map(x, a, b, c, d) {
     let t = (x - a)/(b - a);
-    let y = c + (d-c)*t;
+    let y = c + (d - c)*t;
     return y;
     //if (!clamped) return y;
     //return (c < d) ? clamp(y, c, d) : clamp(y, d, c);
