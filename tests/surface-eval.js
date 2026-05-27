@@ -565,8 +565,8 @@ test("Nested functions",
 );
 
 console.log("\n===== INEQUALITIES =====\n");
-test("Less than true",          null, "3<5", 1);
-test("Less than false",         null, "5<3", 0);
-test("Greater equal",           null, "5\\ge 5", 1);
-test("Equality",                null, "3=3", 1);
-test("Equality false",          null, "3=4", 0);
+test("Less than true",    null, "3<5", 1);
+test("Less than false",   null, "5<3", 0);
+test("Greater equal",     null, "5\\ge 5", 1);
+test("Equality",          null, "3=3", 1);
+test("Equality false",    null, "3=4", 0);
